@@ -10,10 +10,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 
-# %% ../nbs/01_netana_L06.ipynb 5
+# %% ../nbs/01_netana_L06.ipynb 6
 n = 10
 
-# %% ../nbs/01_netana_L06.ipynb 6
+# %% ../nbs/01_netana_L06.ipynb 7
 # Generate a random tree using the Prüfer sequence approach
 def generate_random_tree(num_nodes, seed=None):
     if seed is not None:
@@ -38,7 +38,7 @@ def generate_random_tree(num_nodes, seed=None):
     edges.append((u, v))
     return nx.Graph(edges)
 
-# %% ../nbs/01_netana_L06.ipynb 8
+# %% ../nbs/01_netana_L06.ipynb 9
 # Function to draw trees side-by-side
 def draw_trees(trees, titles):
     fig, axes = plt.subplots(1, len(trees), figsize=(15, 5))
@@ -48,7 +48,7 @@ def draw_trees(trees, titles):
         ax.set_title(title)
     plt.show()
 
-# %% ../nbs/01_netana_L06.ipynb 12
+# %% ../nbs/01_netana_L06.ipynb 13
 def giant_component_size(k):
     # Solve S = 1 - exp(-k * S)
     func = lambda S: S - (1 - np.exp(-k * S))
@@ -56,7 +56,7 @@ def giant_component_size(k):
     S_solution, = fsolve(func, S_guess)
     return S_solution
 
-# %% ../nbs/01_netana_L06.ipynb 14
+# %% ../nbs/01_netana_L06.ipynb 15
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
@@ -64,7 +64,7 @@ from scipy.optimize import fsolve
 import ipywidgets as widgets
 from IPython.display import display
 
-# %% ../nbs/01_netana_L06.ipynb 15
+# %% ../nbs/01_netana_L06.ipynb 16
 # Function to solve S = 1 - exp(-k * S)
 def giant_component_size(k):
     if k <= 0:
@@ -74,7 +74,7 @@ def giant_component_size(k):
     S_solution, = fsolve(func, S_guess)
     return S_solution
 
-# %% ../nbs/01_netana_L06.ipynb 16
+# %% ../nbs/01_netana_L06.ipynb 17
 # Function to update the graph
 def update_graph(n=100, k_bar=0.5):
     m = int(k_bar * n / 2)
@@ -102,7 +102,7 @@ def update_graph(n=100, k_bar=0.5):
     plt.show()
 
 
-# %% ../nbs/01_netana_L06.ipynb 17
+# %% ../nbs/01_netana_L06.ipynb 18
 # Widgets
 n_slider = widgets.IntSlider(value=100, min=20, max=500, step=10, description='Nodes (n):')
 k_slider = widgets.FloatSlider(value=0.5, min=0.0, max=3.0, step=0.05, description='Avg. Degree (k̄):')
