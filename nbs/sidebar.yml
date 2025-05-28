@@ -2,8 +2,14 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - 00_core.ipynb
-      - 01_plotsine.ipynb
+      - 01_netana_L01.ipynb
+      - 01_netana_L02.ipynb
+      - 01_netana_L03.ipynb
+      - 01_netana_L04.ipynb
+      - 01_netana_L05.ipynb
+      - 01_netana_L06.ipynb
+      - 01_netana_L07.ipynb
+      - 02_netana_ex03.ipynb
+      - 02_netana_ex04.ipynb
       - 03_abgabe_blatt_3_kalchschmid_wenzler.ipynb
-      - 04_network_analysis.ipynb
-      - 05_network_analysis.ipynb
+      - 04_plotsine.ipynb
