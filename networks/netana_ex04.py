@@ -5,17 +5,18 @@
 # %% auto 0
 __all__ = ['create_graph_a', 'create_graph_b', 'create_graph_c', 'create_graph_d', 'create_graph_small']
 
-# %% ../nbs/02_netana_ex04.ipynb 1
+# %% ../nbs/02_netana_ex04.ipynb 3
 from nbdev.showdoc import *
 from typing import Tuple
 
-# %% ../nbs/02_netana_ex04.ipynb 2
+# %% ../nbs/02_netana_ex04.ipynb 4
 from graph_tool.all import *
 import graph_tool.inference
 import itertools
 import numpy as np
 from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
+
 
 # %% ../nbs/02_netana_ex04.ipynb 34
 # Create graph
@@ -45,7 +46,7 @@ def create_graph_a() -> Tuple[Graph, VertexPropertyMap]:
     partition[g.vertex(5)] = 0
 
     # Draw
-    graph_draw(g, vertex_fill_color=partition, output_size=(400, 400))
+    graph_draw(g, vertex_fill_color=partition, output_size=(200, 200))
     return g, partition
 
 
@@ -78,7 +79,7 @@ def create_graph_b() -> Tuple[Graph, VertexPropertyMap]:
 
 
     # Draw
-    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(400, 400))
+    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(200, 200))
     return g, partition
 
 
@@ -109,7 +110,7 @@ def create_graph_c() -> Tuple[Graph, VertexPropertyMap]:
     partition[g.vertex(5)] = 0
 
     # Draw
-    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(400, 400))
+    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(200, 200))
     return g, partition
 
 
@@ -149,10 +150,10 @@ def create_graph_d() -> Tuple[Graph, VertexPropertyMap]:
 
 
     # Draw
-    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(400, 400))
+    graph_draw(g, vertex_fill_color=partition, vertex_text=labels, output_size=(200, 200))
     return g, partition
 
-# %% ../nbs/02_netana_ex04.ipynb 53
+# %% ../nbs/02_netana_ex04.ipynb 51
 # Create graph
 def create_graph_small() -> Tuple[Graph, VertexPropertyMap]:
     g = Graph(directed=False)
@@ -170,5 +171,5 @@ def create_graph_small() -> Tuple[Graph, VertexPropertyMap]:
     for i in range(5):
         labels[g.vertex(i)] = i
     # Draw
-    graph_draw(g, vertex_text=labels, output_size=(400, 400))
+    graph_draw(g, vertex_text=labels, output_size=(200, 200))
     return g
